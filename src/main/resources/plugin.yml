@@ -1,0 +1,9 @@
+name: DreamSpeedrun
+version: ${project.version}
+description: ${project.description}
+author: SlipperySpelunky
+main: me.slipperyspelunky.dreamspeedrun.DreamSpeedrun
+api-version: 1.13
+commands:
+  speedrun:
+    description: Primary command for the speedrun plugin!

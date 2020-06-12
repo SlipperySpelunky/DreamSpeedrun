@@ -1,0 +1,4 @@
+# Official configuration for DreamSpeedrun
+
+enabled: true # Whether the plugin enables or not.
+speedrunner: Mister_Slip # The person speed running.
