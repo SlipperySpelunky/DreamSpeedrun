@@ -3,8 +3,7 @@ package me.slipperyspelunky.dreamspeedrun;
 import me.slipperyspelunky.dreamspeedrun.commands.CommandHandler;
 import me.slipperyspelunky.dreamspeedrun.listeners.InventoryClick;
 import me.slipperyspelunky.dreamspeedrun.listeners.ItemRightClick;
-import me.slipperyspelunky.dreamspeedrun.listeners.PlayerJoin;
-import me.slipperyspelunky.dreamspeedrun.listeners.PlayerRespawn;
+import me.slipperyspelunky.dreamspeedrun.listeners.GiveCompassListeners;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,9 +14,8 @@ public final class DreamSpeedrun extends JavaPlugin {
     public void onEnable() {
         if(methods.getConfigBoolean("enabled")) {
 
-            getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+            getServer().getPluginManager().registerEvents(new GiveCompassListeners(), this);
             getServer().getPluginManager().registerEvents(new ItemRightClick(), this);
-            getServer().getPluginManager().registerEvents(new PlayerRespawn(), this);
             getServer().getPluginManager().registerEvents(new InventoryClick(), this);
 
             getCommand("speedrun").setExecutor(new CommandHandler());

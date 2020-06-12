@@ -6,18 +6,26 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class PlayerRespawn implements Listener {
+public class GiveCompassListeners implements Listener {
     private final Methods methods = new Methods();
 
     @EventHandler
-    public void onPlayerRespawn(PlayerRespawnEvent e) {
-        Player p = e.getPlayer();
+    public void onPlayerJoin(PlayerJoinEvent e) {
+        giveCompass(e.getPlayer());
+    }
 
-        if(!(methods.getConfigString("speedrunner").equals(e.getPlayer().getName()))) {
+    @EventHandler
+    public void onPlayerRespawn(PlayerRespawnEvent e) {
+        giveCompass(e.getPlayer());
+    }
+
+    private void giveCompass(Player p) {
+        if(!(methods.getConfigString("speedrunner").equals(p.getName()))) {
             if(!(p.getInventory().contains(Material.COMPASS))) {
                 ItemStack compass = new ItemStack(Material.COMPASS);
                 ItemMeta compass_meta = compass.getItemMeta();
