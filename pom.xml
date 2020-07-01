@@ -6,7 +6,7 @@
 
   <groupId>me.slipperyspelunky</groupId>
   <artifactId>DreamSpeedrun</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.2</version>
   <packaging>jar</packaging>
   <description>Simple plugin to speed run Minecraft! Idea from Dream.</description>
 
@@ -59,7 +59,7 @@
     <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot-api</artifactId>
-      <version>1.14.4-R0.1-SNAPSHOT</version>
+      <version>1.16.1-R0.1-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
